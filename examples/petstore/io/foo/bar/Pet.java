@@ -1,32 +1,21 @@
 package io.foo.bar;
 
 import java.util.Objects;
-import io.foo.bar.Category;
-import io.foo.bar.Tag;
-import java.util.ArrayList;
-import java.util.List;
-import com.google.gson.annotations.SerializedName;
-
-
+import io.foo.bar.Category;import io.foo.bar.Tag;import java.util.ArrayList;import java.util.List;
 
 
 
 public class Pet   {
-  @SerializedName("id")
+
   public final Long id;
 
-  @SerializedName("category")
   public final Category category;
 
-  @SerializedName("name")
   public final String name;
 
-  @SerializedName("photoUrls")
   public final List<String> photoUrls;
 
-  @SerializedName("tags")
   public final List<Tag> tags;
-
   /**
    * pet status in the store
    */
@@ -47,9 +36,8 @@ public class Pet   {
     }
   }
 
-  @SerializedName("status")
-  public final StatusEnum status;
 
+  public final StatusEnum status;
 
    private Pet() {
          id = null;

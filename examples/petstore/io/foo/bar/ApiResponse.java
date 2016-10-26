@@ -1,22 +1,17 @@
 package io.foo.bar;
 
 import java.util.Objects;
-import com.google.gson.annotations.SerializedName;
-
 
 
 
 
 public class ApiResponse   {
-  @SerializedName("code")
+
   public final Integer code;
 
-  @SerializedName("type")
   public final String type;
 
-  @SerializedName("message")
   public final String message;
-
 
    private ApiResponse() {
          code = null;

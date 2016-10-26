@@ -1,19 +1,15 @@
 package io.foo.bar;
 
 import java.util.Objects;
-import com.google.gson.annotations.SerializedName;
-
 
 
 
 
 public class Category   {
-  @SerializedName("id")
+
   public final Long id;
 
-  @SerializedName("name")
   public final String name;
-
 
    private Category() {
          id = null;

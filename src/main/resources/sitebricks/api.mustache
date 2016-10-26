@@ -20,49 +20,49 @@ import com.google.sitebricks.http.Put;
 import com.google.sitebricks.http.Delete;
 
 {{#operations}}
-    /**
-     *
-     * @author
-     * add this binding in the SitebricksModule -  at("{{contextPath}}").serve({{classname}}.class);
-     */
-    @At("{{contextPath}}/{{baseName}}")
-    @Service
-    public class {{classname}}  {
-    /**
-    * Uncomment and implement as you see fit.  These operations will map
-    * Direclty to operation calls from the routing logic.  Because the inflector
-    * Code allows you to implement logic incrementally, they are disabled.
-    **/
+/**
+ *
+ * @author
+ * add this binding in the SitebricksModule -  at("{{contextPath}}/{{baseName}}").serve({{classname}}.class);
+ */
+@At("{{contextPath}}/{{baseName}}")
+@Service
+public class {{classname}}  {
+  /**
+  * Uncomment and implement as you see fit.  These operations will map
+  * Direclty to operation calls from the routing logic.  Because the inflector
+  * Code allows you to implement logic incrementally, they are disabled.
+  **/
 
-    @Inject
-    public {{classname}}(){
-    }
+  @Inject
+  public {{classname}}(){
+  }
 
-    {{#operation}}
+  {{#operation}}
 
-        /**
-         * {{summary}} {{notes}}
-         * {{#hasQueryParams}}@param request - sitebrickst request wrapper, that contains the request body{{description}}{{/hasQueryParams}}
-         * {{#hasBodyParam}}@param request - sitebrickst request wrapper, that contains the request body{{description}}{{/hasBodyParam}}
-         * {{#pathParams}}
-         * @param {{paramName}} {{description}}
-         * {{/pathParams}}
-         * Expected answers:
-         * {{#responses}}
-         *          code {{code}} : {{dataType}} {{^message.isEmpty}}({{message}}){{/message.isEmpty}}{{^headers.isEmpty}}
-         *          Headers :{{#headers}}
-         *          {{baseName}} - {{description}}{{/headers}}{{/headers.isEmpty}}
-         * {{/responses}}
-         * @return
-         */
-         {{#methodPath}}@At("{{methodPath}}"){{/methodPath}}
-         @{{httpMethodCapitalized}}
-         public Reply<?> {{operationId}}({{>methodParams}}) {
-           {{#hasBodyParam}}{{>handleBodyParams}}{{/hasBodyParam}}
-           {{#hasQueryParams}}{{>handleQueryParams}}{{/hasQueryParams}}
-           return Reply.saying().ok();
-         }
-    {{/operation}}
-    }
+  /**
+   * {{summary}} {{notes}}
+   * {{#hasQueryParams}}@param request - sitebricks request wrapper, that contains the request body{{description}}{{/hasQueryParams}}
+   * {{#hasBodyParam}}@param request - sitebricks request wrapper, that contains the request body{{description}}{{/hasBodyParam}}
+   * {{#pathParams}}
+   * @param {{paramName}} {{description}}
+   * {{/pathParams}}
+   * Expected answers:
+   * {{#responses}}
+   *          code {{code}} : {{dataType}} {{^message.isEmpty}}({{message}}){{/message.isEmpty}}{{^headers.isEmpty}}
+   *          Headers :{{#headers}}
+   *          {{baseName}} - {{description}}{{/headers}}{{/headers.isEmpty}}
+   * {{/responses}}
+   * @return
+   */
+   {{#methodPath}}@At("{{methodPath}}"){{/methodPath}}
+   @{{httpMethodCapitalized}}
+   public Reply<?> {{operationId}}({{>methodParams}}) {
+     {{#hasBodyParam}}{{>handleBodyParams}}{{/hasBodyParam}}
+     {{#hasQueryParams}}{{>handleQueryParams}}{{/hasQueryParams}}
+     return Reply.saying().ok();
+   }
+  {{/operation}}
+}
 {{/operations}}
 

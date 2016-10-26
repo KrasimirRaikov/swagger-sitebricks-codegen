@@ -2,25 +2,18 @@ package io.foo.bar;
 
 import java.util.Objects;
 import org.joda.time.DateTime;
-import com.google.gson.annotations.SerializedName;
-
-
 
 
 
 public class Order   {
-  @SerializedName("id")
+
   public final Long id;
 
-  @SerializedName("petId")
   public final Long petId;
 
-  @SerializedName("quantity")
   public final Integer quantity;
 
-  @SerializedName("shipDate")
   public final DateTime shipDate;
-
   /**
    * Order Status
    */
@@ -41,12 +34,10 @@ public class Order   {
     }
   }
 
-  @SerializedName("status")
+
   public final StatusEnum status;
 
-  @SerializedName("complete")
   public final Boolean complete;
-
 
    private Order() {
          id = null;

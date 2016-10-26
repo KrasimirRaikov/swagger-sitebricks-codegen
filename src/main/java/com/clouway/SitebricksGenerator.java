@@ -264,7 +264,7 @@ public class SitebricksGenerator extends AbstractJavaCodegen implements CodegenC
     CustomCodeGenOperation op = (CustomCodeGenOperation) co;
     op.httpMethodCapitalized = capitalize(co.httpMethod);
 
-    if (op.path != null && op.path.contains("{")) {
+    if (op.path != null) {
       op.methodPath = op.path.replaceAll("\\{", ":").replaceAll("\\}", "");
     }
     if ("".equals(op.methodPath)) {

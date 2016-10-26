@@ -1,37 +1,27 @@
 package io.foo.bar;
 
 import java.util.Objects;
-import com.google.gson.annotations.SerializedName;
-
 
 
 
 
 public class User   {
-  @SerializedName("id")
+
   public final Long id;
 
-  @SerializedName("username")
   public final String username;
 
-  @SerializedName("firstName")
   public final String firstName;
 
-  @SerializedName("lastName")
   public final String lastName;
 
-  @SerializedName("email")
   public final String email;
 
-  @SerializedName("password")
   public final String password;
 
-  @SerializedName("phone")
   public final String phone;
 
-  @SerializedName("userStatus")
   public final Integer userStatus;
-
 
    private User() {
          id = null;
